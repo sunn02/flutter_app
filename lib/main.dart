@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '/screens/home_screen.dart'; // Importa tu archivo home.dart
+import '/screens/home_screen.dart'; 
+import '/screens/motivation_screen.dart';
 
 void main() {
   runApp(const MyApp());

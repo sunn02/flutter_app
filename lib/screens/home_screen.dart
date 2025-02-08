@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:english_words/english_words.dart';
+import '/screens/motivation_screen.dart'; 
+
 
 class MyAppState extends ChangeNotifier {
   var current = WordPair.random();
@@ -36,6 +38,11 @@ class MyHomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                  print('button 2 pressed');
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute
+                    (builder: (context) => const MotivationPage()),
+                  );
                  }, 
                  child: const Text('Frases'),
              ),
