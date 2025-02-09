@@ -10,8 +10,24 @@ class TasksPage extends StatefulWidget {
 
 class _TasksPageState extends State<TasksPage> {
 
-  TextEditingController _controller = TextEditingController();
+  TextEditingController _controller = TextEditingController(); // Manages text input fields, such as TextField or TextFormField 
   List<String> tasks = []; 
+
+  void add_tasks() {
+      setState(() {
+          String userInput = _controller.text;
+          if (userInput.isNotEmpty) {
+            tasks.add(userInput); 
+            _controller.clear(); 
+          }
+      });
+  }
+
+  void delete_task(int index) {
+    setState((){
+      tasks.removeAt(index);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,25 +37,29 @@ class _TasksPageState extends State<TasksPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Aca van las tareas'),
             TextField(
             controller: _controller, 
             ),
             ElevatedButton(
               onPressed: () {
-                setState(() {
-                    String userInput = _controller.text;
-                  if (userInput.isNotEmpty) {
-                    tasks.add(userInput); 
-                    _controller.clear(); 
-                  }
-                });
+                add_tasks();
               },
               child: Text('Agregar tarea'),
             ),
 
             for (var task in tasks)
-              Text(task),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(task),
+                  IconButton(
+                    icon: Icon(Icons.delete),
+                    onPressed: () {
+                      delete_task(tasks.indexOf(task));
+                    },
+                  ),
+                ],
+              ),
           ],
         ),
       ),
