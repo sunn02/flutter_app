@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import '../styles.dart'; 
+
 
 class MotivationPage extends StatefulWidget {
   const MotivationPage({super.key});
@@ -48,7 +50,7 @@ class _MotivationPageState extends State<MotivationPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(current),
+            Text(current, style: AppStyles.affirmationStyle),
             ElevatedButton(
               onPressed: () {
                 print('button pressed');
