@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../styles.dart'; 
+
 
 class TasksPage extends StatefulWidget {
   const TasksPage({super.key});
@@ -61,17 +63,25 @@ class _TasksPageState extends State<TasksPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             for (var task in tasks)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(task),
-                  IconButton(
-                    icon: Icon(Icons.delete),
-                    onPressed: () {
-                      delete_task(tasks.indexOf(task));
-                    },
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                child: Container(
+                  decoration: AppStyles.taskContainer,
+                  margin: EdgeInsets.symmetric(vertical: 8),  // Espaciado entre tareas
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(task, style: AppStyles.taskStyle),
+                      IconButton(
+                        icon: Icon(Icons.delete),
+                        onPressed: () {
+                          delete_task(tasks.indexOf(task));
+                        },
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
           ],
         ),

@@ -52,11 +52,12 @@ class _MotivationPageState extends State<MotivationPage> {
           children: [
             Text(current, style: AppStyles.affirmationStyle),
             ElevatedButton(
+              style: AppStyles.buttonStyle,
               onPressed: () {
                 print('button pressed');
                 fetchData(); // Cambia a la siguiente frase
               },
-              child: const Text('Otra frase'),
+              child: const Text('Otra frase', style: AppStyles.taskStyle,),
             ),
           ],
         ),

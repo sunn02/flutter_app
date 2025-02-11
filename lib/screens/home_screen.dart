@@ -18,8 +18,9 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('Welcome!', style: AppStyles.titleStyle),
-            Image.asset('images/https___bestanimations_com_media_beverages_1085588754tea-suacer-animated-gif-2.gif'),
+            Image.asset('images/hola.gif'),
             ElevatedButton(
+              style: AppStyles.buttonStyle,
               onPressed: (){
                 print('button 1 pressed');
                 Navigator.push(
@@ -30,6 +31,7 @@ class MyHomePage extends StatelessWidget {
               child: const Text('Tareas'),
             ),
             ElevatedButton(
+              style: AppStyles.buttonStyle,
               onPressed: () {
                  print('button 2 pressed');
                  Navigator.push(
