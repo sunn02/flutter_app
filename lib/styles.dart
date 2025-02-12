@@ -2,47 +2,61 @@ import 'package:flutter/material.dart';
 
 
 class AppStyles {
-  // Estilo para títulos
-  static const TextStyle titleStyle = TextStyle(
-    fontFamily: 'Press Start 2P',
-    fontSize: 24,
-    fontWeight: FontWeight.bold,
-    color: Color.fromARGB(255, 0, 0, 0),
+  static final TextStyle titleStyle = TextStyle(
+    fontSize: 28,
+    fontWeight: FontWeight.w600, // Estilo menos fuerte que el negrita
+    color: Colors.teal.shade900,
   );
 
+  static const TextStyle subtitleStyle = TextStyle(
+    fontSize: 14,
+    color: Colors.black,
+  );
 
-  // Estilo para tareas
   static const TextStyle taskStyle = TextStyle(
-    fontFamily: 'Press Start 2P',
-    fontSize: 15,
-    color: Color.fromARGB(255, 0, 0, 0),
+    fontSize: 13,
+    color: Colors.black87, // Color más suave para el texto
   );
 
-  // Estilo para frases
-  static const TextStyle affirmationStyle = TextStyle(
-    fontSize: 20,
+  static const TextStyle messageStyle = TextStyle(
+    fontSize: 15,
     color: Colors.black87,
   );
 
-  // Estilo para botones
-  static final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    backgroundColor: const Color.fromARGB(255, 255, 181, 90),
-    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-    textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, fontFamily: 'Press Start 2P'  ),
-    elevation: 0, 
+  static BoxDecoration messageContainer = BoxDecoration(
+    borderRadius: BorderRadius.all(Radius.circular(10)),
+    color: Colors.white,
+    border: Border.all(
+    color: Colors.teal.shade900,
+    width: 3,// Grosor del borde
+    ),
+    
   );
 
-  // Estilo para los elementos de la lista
-  static const BoxDecoration taskContainer = BoxDecoration(
-    color: Color.fromARGB(255, 255, 219, 119),
-    borderRadius: BorderRadius.all(Radius.circular(10)),
+  static final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+    elevation: 4, 
+    shape: RoundedRectangleBorder(
+       borderRadius: BorderRadius.all(Radius.circular(10)),
+    ),
+    backgroundColor: Colors.teal.shade900,
+    foregroundColor: Colors.white,
     
-    // boxShadow: [
-    //   BoxShadow(
-    //     color: Colors.grey,
-    //     blurRadius: 5,
-    //     offset: Offset(0, 3),
-    //   ),
-    // ],
+  );
+
+  static BoxDecoration taskContainer = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.all(Radius.circular(10)),
+    border: Border.all(
+    color: Colors.teal.shade900,
+    width: 3,// Grosor del borde
+    ),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.2),
+        blurRadius: 5,
+        offset: Offset(0, 3),
+      ),
+    ],
   );
 }

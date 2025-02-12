@@ -50,14 +50,21 @@ class _MotivationPageState extends State<MotivationPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(current, style: AppStyles.affirmationStyle),
-            ElevatedButton(
+
+            Container(
+              padding: EdgeInsets.all(16),
+              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+              decoration: AppStyles.messageContainer,
+              child: Text(current, style: AppStyles.messageStyle) //---> FRASE
+            ),
+            
+            ElevatedButton( //---> BOTON
               style: AppStyles.buttonStyle,
               onPressed: () {
                 print('button pressed');
                 fetchData(); // Cambia a la siguiente frase
               },
-              child: const Text('Otra frase', style: AppStyles.taskStyle,),
+              child: const Text('Otro!'),
             ),
           ],
         ),

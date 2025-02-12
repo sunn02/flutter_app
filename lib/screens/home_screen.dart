@@ -5,7 +5,6 @@ import '/screens/motivation_screen.dart';
 import '/screens/tasks_screen.dart'; 
 import '../styles.dart'; 
 
-
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
@@ -17,12 +16,19 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Welcome!', style: AppStyles.titleStyle),
-            Image.asset('images/hola.gif'),
-            ElevatedButton(
+
+            Text('¡Welcome!', style: AppStyles.titleStyle),
+
+            Container(
+              padding: EdgeInsets.all(16),
+              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+              decoration: AppStyles.messageContainer,
+              child: const Text('Encuentra motivación y organiza tus tareas en un solo lugar.', style: AppStyles.subtitleStyle, textAlign: TextAlign.center,),
+            ),
+
+            ElevatedButton( // ---> BOTON DE TAREAS
               style: AppStyles.buttonStyle,
               onPressed: (){
-                print('button 1 pressed');
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const TasksPage()),
@@ -30,18 +36,20 @@ class MyHomePage extends StatelessWidget {
               }, 
               child: const Text('Tareas'),
             ),
-            ElevatedButton(
+
+            SizedBox(height: 16),
+
+            ElevatedButton( // ---> BOTON DE FRASES
               style: AppStyles.buttonStyle,
               onPressed: () {
-                 print('button 2 pressed');
                  Navigator.push(
                   context,
                   MaterialPageRoute
                     (builder: (context) => const MotivationPage()),
-                  );
-                 }, 
-                 child: const Text('Frases'),
-             ),
+                 );
+              }, 
+              child: const Text('Frases'),
+            ),
           ],
         ),
       ),

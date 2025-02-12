@@ -15,8 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         theme: ThemeData(
           useMaterial3: true,
+          scaffoldBackgroundColor: Colors.green.shade100,
           colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 255, 255, 255)),
-          fontFamily: 'PressStart2P',  
+          fontFamily: 'Poppins',  
           textTheme: TextTheme(
             displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             bodyLarge: TextStyle(fontSize: 16),
