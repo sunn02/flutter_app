@@ -100,14 +100,16 @@ class _TasksPageState extends State<TasksPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: Colors.teal.shade50,
+        backgroundColor: Colors.teal.shade900,
+        foregroundColor: Colors.white,
+
         onPressed: () {
           // Show a dialog to add a new task
           showDialog(
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: Text('Add Task'), // ---> TITULO DEL DIALOGO
+                title: Text('Add Task',), // ---> TITULO DEL DIALOGO
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
 
@@ -120,6 +122,7 @@ class _TasksPageState extends State<TasksPage> {
                 ),
                 actions: [
                   ElevatedButton(
+                    style: AppStyles.buttonStyle,
                     onPressed: () {
                       add_tasks();
                       Navigator.of(context).pop(); // Close the dialog
