@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '/screens/home_screen.dart'; 
-import '/screens/motivation_screen.dart';
-import 'styles.dart';
 void main() {
   runApp(const MyApp());
 }
