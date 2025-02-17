@@ -1,9 +1,7 @@
 import 'package:app/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '/screens/motivation_screen.dart'; 
 import '/screens/tasks_screen.dart'; 
-import '../styles.dart'; 
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
